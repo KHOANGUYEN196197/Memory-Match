@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 export default function Home() {
   const navigate = useNavigate();
 
-  const handleSelect = (size: number) => {
+  const handleSelect = () => {
     navigate('/game');
   };
 
@@ -29,7 +29,7 @@ export default function Home() {
         {[2, 4, 6].map((size) => (
           <button
             key={size}
-            onClick={() => handleSelect(size)}
+            onClick={() => handleSelect()}
             className="
               bg-white bg-opacity-90 text-indigo-700 font-bold rounded-xl shadow-lg py-6 text-2xl
               transition-transform transform
