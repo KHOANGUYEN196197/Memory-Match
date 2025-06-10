@@ -1,10 +1,7 @@
-import { useState, useEffect, useMemo, useContext } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useGameStore } from "../store/gameStore/GameStore";
 import Card from "./Card";
 import Scoreboard from "./Scoreboard";
-import { AuthContext } from "../context/AuthContext";
-import { addDoc, collection, serverTimestamp } from "firebase/firestore";
-import { db } from "../firebase/firebase";
 import { saveScore } from "../utils/saveScore";
 import { getAuth } from "firebase/auth";
 
@@ -18,7 +15,6 @@ export default function Board() {
   const setLoading = useGameStore((state) => state.setLoading);
   const [elapsed, setElapsed] = useState(0);
   const [isRunning, setIsRunning] = useState(true);
-  const { currentUser } = useContext(AuthContext);
   const user = getAuth().currentUser;
 
   const gridCols = useMemo(() => {

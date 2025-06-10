@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useGameStore, type Pokemon } from '../../store/gameStore/GameStore';
 import Board from '../../components/Board';
 import { getPokemonList } from '../../utils/fetchPokemon';
