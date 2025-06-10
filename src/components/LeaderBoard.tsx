@@ -63,7 +63,7 @@ export default function Leaderboard() {
                   type: "spring",
                   stiffness: 80,
                 }}
-                className="flex gap-[8px] items-start bg-gradient-to-r from-gray-50 to-white p-4 rounded-xl shadow hover:shadow-lg transition"
+                className="flex gap-[8px] items-center bg-gradient-to-r from-gray-50 to-white p-4 rounded-xl shadow hover:shadow-lg transition mb-[8px]"
               >
                 <div className="flex gap-[6px] items-center space-x-4">
                   {rankEmojis.length > 0 && (
