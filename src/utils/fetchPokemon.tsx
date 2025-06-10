@@ -13,6 +13,6 @@ export async function getPokemonList(count: number): Promise<Pokemon[]> {
   return details.map((p: any) => ({
     id: p.id,
     name: p.name,
-    image: p.sprites.front_default,
+    image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${p.id}.png`,
   }));
 }

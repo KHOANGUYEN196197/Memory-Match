@@ -2,11 +2,13 @@ import { useEffect, useState } from 'react';
 import { useGameStore, type Pokemon } from '../../store/gameStore/GameStore';
 import Board from '../../components/Board';
 import { getPokemonList } from '../../utils/fetchPokemon';
+import Spinner from '../../components/Spinner';
 
 export default function Game() {
   const gridSize = useGameStore((state) => state.gridSize);
   const setPokemonList = useGameStore((state) => state.setPokemonList);
-  const [loading, setLoading] = useState<boolean>(true);
+   const setLoading = useGameStore((state) => state.setLoading);
+  const loading = useGameStore((state) => state.loading);
 
   const numPairs = (gridSize * gridSize) / 2;
 
@@ -26,7 +28,7 @@ export default function Game() {
     fetchData();
   }, [gridSize, setPokemonList, numPairs]);
 
-  if (loading) return <div>Đang tải Pokémon...</div>;
+  if (loading) return <div className='flex justify-center h-[90vh] items-center'> <Spinner /></div>;
 
-  return <Board />;
+  return <Board/>;
 }

@@ -2,7 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-/* card.css hoặc index.css */
+.loading-ball {
+    height: 60px;
+    filter: brightness(80%);
+    animation: rotatePokeBall ease-in-out 3s infinite;
+}
+
+@keyframes rotatePokeBall {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 .perspective {
   perspective: 1000px;
 }
@@ -22,4 +32,15 @@
 
 .card-back {
   transform: rotateY(180deg);
+}
+body{
+  height: calc(100vh - 16px);
+  background-image: url('./assets/sd.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin: 0;
+}
+p{
+  margin: 0;
 }
